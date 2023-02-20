@@ -1,0 +1,39 @@
+
+{
+    "_docId-mongo": "",
+    "taskId": "3JB9B",
+    "activities": [
+        {
+            "activityId": "makeId",
+            "key": "status",
+            "newVal": "sdc34",
+            "oldVal": "qwdlk",
+            "doneBy": "loggedinUser",
+            "relevantPerson": "person"
+        },
+        {
+            "activityId": "makeId",
+            "key": "status",
+            "newVal": "sdc34",
+            "oldVal": "qwdlk",
+            "doneBy": "loggedinUser",
+            "relevantPerson": "null"
+        },
+        {
+            "activityId": "makeId",
+            "key": "status",
+            "newVal": "sdc34",
+            "oldVal": "qwdlk",
+            "doneBy": "loggedinUser",
+            "relevantPerson": "null"
+        },
+        {
+            "activityId": "makeId",
+            "key": "status",
+            "newVal": "sdc34",
+            "oldVal": "qwdlk",
+            "doneBy": "loggedinUser",
+            "relevantPerson": "null"
+        }
+    ]
+}

@@ -1,0 +1,534 @@
+.task-preview {
+    position: relative;
+
+    &.being-edit {
+        background-color: $fltr-bgc !important;
+
+        &:hover {
+            background-color: darken($fltr-bgc, 3%) !important;
+        }
+
+        .content-li:hover {
+            background-color: unset;
+        }
+
+        .static {
+
+            .task-title-container,
+            .task-title-item,
+            .task-select {
+                background-color: $fltr-bgc !important;
+
+                &:hover {
+                    background-color: darken($fltr-bgc, 3%) !important;
+                }
+            }
+
+            &:hover {}
+        }
+    }
+
+    .static {
+        display: grid;
+        grid-template-columns: 36px 36px 1fr;
+        position: sticky;
+        left: 0;
+        z-index: 500;
+        background-color: white;
+
+        .hover-marks {
+            position: absolute;
+            right: 14px;
+            display: flex;
+            align-items: center;
+            display: none;
+
+            span {
+                scale: 1.2;
+                margin-right: 8px;
+            }
+        }
+
+        .task-title-container {
+            border-bottom: 1px solid $brdr-clr;
+            max-height: 38px;
+            display: flex;
+
+            @include for-mobile-layout {
+                border: none;
+            }
+
+            .task-comment-icon {
+                height: 100%;
+                // width: 100%;
+                width: 65px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+                transition: 0.4s;
+                border-left: 1px solid $brdr-clr;
+                border-right: 1px solid $brdr-clr;
+
+                @include for-mobile-layout {
+                    border-bottom: 1px solid $brdr-clr;
+                }
+
+                &:hover {
+                    fill: $primary-blue;
+                }
+
+                &.count-comment span svg {
+                    color: $primary-blue;
+                }
+
+                .task-comments-length {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    bottom: 3px;
+                    right: 13px;
+                    position: absolute;
+                    background-color: $primary-blue;
+                    color: white;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 2em;
+                    font-size: rem(10px);
+                }
+            }
+
+            .task-title-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding-left: 34px;
+                background-color: white;
+                position: sticky;
+                left: 72px;
+                z-index: 5000;
+
+                @include for-mobile-layout {
+                    border-bottom: 1px solid $brdr-clr;
+                }
+
+                &div {
+                    border: none !important;
+                }
+
+                .task-title {
+                    text-align: left;
+                    width: fit-content;
+                    // max-width: 60%;
+                    position: relative;
+                    right: 4px;
+                    height: 60%;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    border-radius: 0.2em;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    padding-top: calc(11.8px - 0.5rem);
+                    max-width: 200px;
+
+                    &:hover {
+                        outline: 1px solid $brdr-clr;
+                    }
+
+                    &:focus {
+                        outline: 1px solid $primary-blue;
+                    }
+                }
+
+                &:hover {
+                    .hover-marks {
+                        display: flex;
+                    }
+                }
+
+
+            }
+        }
+
+
+
+    }
+
+    .dynamic {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 150px);
+        grid-auto-columns: 150px;
+        grid-auto-flow: column;
+        grid-template-rows: 36px;
+        border-bottom: 1px solid $brdr-clr;
+
+        >* {
+            border-right: 1px solid $brdr-clr;
+        }
+
+        .task-members {
+            position: relative;
+            cursor: pointer;
+
+            .add-person-icon {
+                scale: 0.9;
+                fill: $primary-blue;
+                position: absolute;
+                left: 6px;
+                opacity: 0;
+            }
+
+            &:hover {
+                .add-person-icon {
+                    opacity: 1;
+                }
+            }
+
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .task-avatar {
+                position: relative;
+                display: flex;
+                background-size: cover;
+                width: 30px;
+                height: 30px;
+                border: 2px solid white;
+                border-radius: 2em;
+                box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+                margin: 0 -5px;
+            }
+
+            .default-person {
+                border-radius: 2em;
+                scale: 0.8;
+
+                svg {
+                    fill: lighten($layout-gray, 12%);
+                }
+            }
+        }
+
+        .options {
+            background-color: white;
+            position: sticky;
+            left: 0px;
+            z-index: 1000;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        .numbers,
+        .txt {
+            cursor: text;
+
+            div {
+                @include ellipsis(14px, 100%);
+                padding-left: 6px;
+                padding-right: 6px;
+                border: none;
+
+                input {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+
+            &:hover {
+                @include cellBorderHover;
+
+                .not-editing-mode {
+                    visibility: inherit;
+
+                    .hovering {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        span {
+                            svg {
+                                scale: 1;
+                            }
+                        }
+
+                        .icon {
+                            width: fit-content;
+                            padding: 0;
+                            scale: 1;
+                        }
+
+                        pre {
+                            font-size: rem(10px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .timeline {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .range {
+                border-radius: 11px;
+                max-width: 100%;
+                width: 80%;
+                height: 22px;
+                background-color: $layout-black;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+
+                .value {
+                    height: 100%;
+                    align-self: flex-start;
+                    justify-self: grid;
+                }
+
+                .text {
+                    position: absolute;
+                    @include ellipsis;
+                    color: $clr-white;
+                    font-size: rem(12px);
+                    width: 80%;
+                    text-align: center;
+                    padding-left: 10%;
+                    padding-right: 10%;
+                }
+            }
+        }
+
+        .header-task-select {
+            border-top-left-radius: 0.3em;
+        }
+
+        .link {
+            @include cellBorderHover;
+
+            a {
+                color: $clr-dark-blue;
+            }
+
+            &:hover {
+                cursor: text;
+            }
+        }
+
+        .task-date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &:hover {
+                @include cellBorderHover;
+                cursor: text;
+            }
+        }
+
+        .-header {
+            background-color: white;
+            position: sticky;
+            left: 72px;
+            z-index: 5000;
+        }
+
+        .plus {
+            svg {
+                fill: $primary-blue;
+                scale: 0.8;
+            }
+        }
+
+        .editing-mode {
+            margin: 0;
+            padding: 4px;
+            height: 100%;
+            outline: 0.5px solid $primary-blue;
+
+            .inner-frame {
+                padding: 4px;
+            }
+
+            width: 100%;
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                appearance: none;
+            }
+
+            input {
+                height: 100%;
+                outline: 0.5px solid $primary-blue;
+                text-align: center;
+
+                width: 100%;
+            }
+        }
+
+        .labels {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .label-name {
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+
+                .container {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+
+                    i {
+                        position: absolute;
+                        display: block;
+                        left: 50%;
+                        top: 10px;
+                        width: 2px;
+                        height: 4px;
+                        background: red;
+                        opacity: 0;
+                    }
+
+                    &.animate {
+                        @for $i from 1 through 50 {
+                            i:nth-of-type(#{$i}) {
+                                transform: translate3d(random(190) - 100 + px, random(200) - 100 + px, 0) rotate(random(360) + deg);
+                                background: hsla(random(360), 100%, 50%, 1);
+                                animation: bang 700ms ease-out forwards;
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    @keyframes bang {
+                        from {
+                            transform: translate3d(0, 0, 0);
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .fold {
+                    width: 0px;
+                    height: 0px;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    border-width: 0;
+                    border-style: solid;
+                    background: rgba(0, 0, 0, 0.2);
+                    display: block;
+                    /*border-radius:3px 0 0 0;*/
+                    border-color: transparent #fff transparent #fff;
+
+                    -webkit-transition: border-width 0.2s ease-out;
+                    -moz-transition: border-width 0.2s ease-out;
+                    -ms-transition: border-width 0.2s ease-out;
+                    -o-transition: border-width 0.2s ease-out;
+                    transition: border-width 0.2s ease-out;
+                }
+
+                &:hover {
+                    opacity: 0.9;
+
+                    .fold {
+                        border-width: 0px 10px 10px 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $wrkspce-bgc;
+
+        .static {
+            background-color: $wrkspce-bgc;
+
+            .task-title-container,
+            .task-title-item,
+            .task-select {
+                background-color: $wrkspce-bgc;
+            }
+
+            .options {
+                background-color: #fff;
+
+                span {
+                    &:hover {
+                        background-color: $brdr-clr;
+                        border-radius: 0.2em;
+                        cursor: pointer;
+                    }
+
+                    &.hidden {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        grid-template-columns: 50vw 1fr !important;
+
+        .static {
+            grid-template-columns: 100%;
+
+            .options {
+                display: none;
+            }
+
+            .task-select {
+                display: none;
+            }
+
+            .task-title-container {
+                border-right: 1px solid $brdr-clr;
+                
+
+                .task-title-item {
+                    border-left: 5px solid;
+                    max-width: 100%;
+                    left: 0px;
+                    padding-left: 12px;
+
+                    .hover-marks{
+                        visibility: hidden;
+                    }
+                }
+
+                .task-comment-icon {
+                    display: none !important;
+                }
+            }
+        }
+
+    }
+}

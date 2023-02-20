@@ -1,0 +1,136 @@
+.login-signup-modal {
+
+    .main-header {
+        padding-left: 8px;
+        color: #333;
+        font-size: roboto-bold;
+        border-bottom: 1px solid #e0e0e0;
+        height: 65px;
+        background: #f7f7f7;
+        width: 100%;
+
+
+        .logo-container {
+            margin-left: 16px;
+
+            .logo {
+                width: 40px;
+            }
+
+            h1 {
+                font-size: rem(32px);
+            }
+        }
+    }
+
+    .login-signup {
+
+
+
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 80px;
+
+        .signup-form {
+            width: 560px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .login-title {
+                font-size: rem(40px);
+                font-family: roboto-thin;
+                font-weight: 100;
+                padding-bottom: 24px;
+            }
+
+            .login-subtitle {
+                font-size: rem(16px);
+                font-family: roboto-bold;
+                padding-bottom: 14px;
+
+            }
+
+            label {
+                input {
+                    width: 360px;
+                    height: 40px;
+                    background-color: transparent;
+                    padding: 8px;
+                    border: 1px solid $brdr-clr;
+                    border-radius: .4em;
+                }
+
+                padding-bottom: 12px;
+            }
+
+            .cta-login-btn {
+                width: 360px;
+                height: 48px;
+                background-color: $primary-blue;
+                color: white;
+                font-size: rem(16px);
+                border-radius: .4em;
+                margin-bottom: 28px;
+            }
+
+            .signup-cta-btn {
+                font-size: rem(16px);
+                font-family: roboto-thin;
+
+                span {
+                    color: $primary-blue;
+                    cursor: pointer;
+                }
+            }
+
+            .add-img-btn {
+                cursor: pointer;
+                border-radius: .4em;
+                border: 1px solid rgb(208, 213, 228);
+                position: relative;
+
+                span {
+                    position: absolute;
+                    right: 8px;
+                    fill: $layout-gray;
+                }
+
+                p {
+                    position: absolute;
+                    font-size: rem(14px);
+                    color: $layout-gray;
+                    left: 8px;
+                }
+
+                input {
+                    cursor: pointer;
+                    opacity: 0;
+                }
+            }
+        }
+
+        @include for-narrow-layout {
+            .signup-form {
+                width: 400px;
+            }
+        }
+
+        @include for-mobile-layout {
+            .signup-form {
+                width: 100%;
+
+                label {
+                    input {
+                        width: 260px;
+                    }
+                }
+
+                .cta-login-btn {
+                    width: 260px;
+                }
+            }
+        }
+    }
+}

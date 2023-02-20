@@ -1,0 +1,128 @@
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 960px;
+$layout-padding: 12px;
+
+
+
+
+// Colors
+
+//basics
+$clr-white: #fff;
+$clr-black: #000;
+
+//regular-modal
+$hr-clr: rgb(230, 233, 239);
+$modal-hover-clr: rgb(220, 223, 236);
+
+//brand
+$primary-brand: #292f4c;
+$primary-brand-hover: #11131f;
+$nav-prpl: #8f8fff;
+$noify-red: #e3435c;
+$wrkspce-icon: #f279f2;
+
+
+//logo
+$logo-red: #ff3d57;
+$logo-yellow: #ffcb00;
+$logo-green: #01d648;
+
+// layout
+$layout-black: #323338;
+$layout-gray: #676879;
+$primary-blue: #0073ea;
+$primary-dark-blue: #0060b9;
+$primamry-blue-hover: #0260b9;
+$btn-hover: #dddfec;
+$btn-active: #cce3fe;
+$wrkspce-bgc: #f6f7fb;
+$brdr-clr: rgb(208, 213, 228);
+$fltr-bgc: #cce5ff;
+
+// msg-color
+$clr-success: #258750;
+$clr-success-hover: #007038;
+$clr-success-highlight: #bbdbc9;
+$clr-done-green: #00c875;
+$clr-error: #d83a52;
+$clr-error-hover: #b63546;
+$clr-error-highlight: #f4c3cb;
+
+// user-palette
+$usr-fuccia: #fb275d;
+$usr-bright-green: #00ca72;
+$usr-purple: #a358d0;
+$usr-dark-indigo: #595ad4;
+$usr-blackish: #1c1f3b;
+$usr-chilli-blue: #66ccff;
+$usr-brigh-orange: #fdab3d;
+$usr-egg-yolk: #ffcb00;
+$usr-royal: #009aff;
+$usr-light-red: #f65f7c;
+$usr-sophia-pink: #ff158a;
+$usr-dark-red: #e2445c;
+$usr-gray: #808080;
+$usr-sky: #579bfc;
+$usr-wine: #bb3354;
+$usr-grass-green: #037f4c;
+$usr-bubble: #ff5ac4;
+$usr-bright-blue: #1f76c2;
+$usr-dark-orange: #ff642e;
+$usr-dark-blue: #225091;
+
+
+// entire palette
+$clr-blackish: #333333;
+
+// grays
+$clr-lilac: #9D99B9;
+$clr-american-gray: #808080;
+$clr-winter: #9aadbd;
+$clr-explosive: #c4c4c4;
+
+// browns
+$clr-pecan: #563E3E;
+$clr-brown: #7f5347;
+$clr-coffee: #BD816E;
+$clr-tan: #AD967A;
+
+// chromatic
+$clr-bubble: #faa1f1;
+$clr-orchid: #d974b0;
+$clr-lipstick: #ff5ac4;
+$clr-sofia-pink: #ff158a;
+$clr-dark-red: #bb3354;
+$clr-red: #e2445c;
+$clr-sunset: #ff7575;
+$clr-peach: #ffadad;
+$clr-orange: #fdab3d;
+$clr-dark-orange: #ff642e;
+$clr-egg-yolk: #ffcb00;
+$clr-saladish: #cab641;
+$clr-bright-green: #9cd326;
+$clr-jade: #03c875;
+$clr-green-haze: #00a359;
+$clr-grass-green: #037f4c;
+$clr-aquamarine: #4eccc6;
+$clr-teal: #175A63;
+$clr-river: #68a1bd;
+$clr-sky: #A1E3F6;
+$clr-chili-blue: #66ccff;
+$clr-dark-blue: #0086c0;
+$clr-live-blue: #009aff;
+$clr-royal: #2B76E5;
+$clr-bright-blue: #579bfc;
+$clr-jeans: #597bfc;
+$clr-navy: #225091;
+$clr-indigo: #5559df;
+$clr-berry: #7e3b8a;
+$clr-purple: #a25ddc;
+$clr-lavender: #BDA8F9;
+$clr-dark-purple: #784bd1;
+$clr-dark-indigo: #401694;
+// update
+// $clr-stuck-lbl: rgb(226 68 92);
+// $clr-stuck-lbl: #e2445c;

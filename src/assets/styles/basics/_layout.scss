@@ -1,0 +1,13 @@
+.main-app-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 66px 254px 1fr;
+
+    &.folded {
+        grid-template-columns: 66px 30px 1fr;
+    }
+
+    @include for-mobile-layout {
+        grid-template-columns: 1fr;
+    }
+}

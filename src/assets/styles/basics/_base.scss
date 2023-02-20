@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $layout-black;
+    color: $layout-black;
+}
+
+html {
+    font-family: roboto-regular;
+    line-height: 1.6;
+    color: $layout-black;
+}
+
+body {
+    font-size: rem(18px);
+    margin: 0;
+    line-height: 1;
+    min-height: 100vh;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $layout-black;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: roboto-regular;
+}
+
+input {
+    border: unset;
+    padding: 0;
+    margin: 0;
+    font-size: rem(14px);
+    font-family: roboto-regular;
+}
+
+input[type=checkbox] {
+    position: relative;
+    border: 1px solid $brdr-clr;
+    border-radius: 2px;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    outline: 0;
+    padding: 0 !important;
+    vertical-align: text-top;
+    -webkit-appearance: none;
+    opacity: 1;
+
+}
+
+input[type=checkbox]:checked {
+    background-color: $primary-blue;
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        width: 2px;
+        height: 6px;
+        border: solid #FFF;
+        border-width: 0 2px 2px 0;
+        margin: -1px -1px 0 -1px;
+        transform: rotate(45deg) translate(-50%, -50%);
+        z-index: 2;
+    }
+}
+
+
+input:focus {
+    outline: none;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    margin: 0;
+    max-width: 40ch;
+}
+
+td {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+::-webkit-scrollbar {
+    height: 16px;
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $brdr-clr;
+}
+
+// GOOGLE
+
+.g-signin2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 50px;
+}
+
+.el-popper {
+    &.is-pure {
+        &.is-light {
+            &.el-picker__popper {
+                z-index: 6000 !important;
+                &.timeline-modal {
+                    z-index: 6000 !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.task-summary {
+    cursor: pointer;
+
+    &:hover {
+        .add-person-icon {
+            opacity: 1;
+        }
+    }
+
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .task-avatar {
+        position: relative;
+        display: flex;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 2em;
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+        margin: 0 -5px;
+    }
+
+    .default-person {
+        border-radius: 2em;
+        scale: 0.8;
+
+        svg {
+            fill: lighten($layout-gray, 12%);
+        }
+
+    }
+
+    .label-progress {
+        height: 100%;
+        width: 100%;
+        padding: 8px;
+
+        .label {
+            height: 100%;
+            display: inline-block;
+        }
+    }
+
+    .numbers-summary {
+        width: 100%;
+
+        .numbers-summary {
+            font-size: 14px;
+            line-height: 15px;
+            @include ellipsis;
+            width: 50%;
+        }
+
+        .sum {
+            font-size: 12px;
+            line-height: 13px;
+            color: $primary-blue;
+        }
+    }
+
+    .timeline {
+        position: relative;
+        width: 80%;
+        height: 22px;
+        background-color: $layout-black;
+        border-radius: 11px;
+        overflow: hidden;
+        text-align: left;
+
+        .elapsed{
+            height: 100%;
+            display: inline-block;
+        }
+
+        p{
+            top:0;
+            position: absolute;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            color: #fff;
+            font-size: 0.75rem;
+            width: 100%;
+            text-align: center;
+            padding-inline: 10%;
+            margin-top: calc((11px - .375rem))
+        }
+    }
+}

@@ -1,0 +1,236 @@
+.workspace-container {
+    background-color: $wrkspce-bgc;
+    padding: $layout-padding;
+    border-right: 1px solid $brdr-clr;
+    position: relative;
+    transition: right 0.2s;
+    z-index: 10;
+    border-top-left-radius: 0.3em;
+
+    &.collapsed {
+        right: 0px;
+
+        > * {
+            opacity: 0;
+            left: -230px;
+            position: absolute;
+        }
+
+        .toggle-workspace-div {
+            opacity: 1 !important;
+            left: 15px;
+            z-index: 50;
+
+            &:hover {
+                background-color: $primary-blue;
+
+                span {
+                    svg {
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    .toggle-workspace-div {
+        background-color: white;
+        border: 1px solid $brdr-clr;
+        width: 26px;
+        height: 24px;
+        border-radius: 2em;
+        position: absolute;
+        right: -15px;
+        top: 23px;
+        cursor: pointer;
+        transition: 0.1s;
+        transition-timing-function: ease-out;
+
+        z-index: 50;
+
+        .toggle-workspace {
+            svg {
+                position: relative;
+                bottom: 1px;
+            }
+        }
+
+        &:hover {
+            background-color: $primary-blue;
+            padding-right: 32px;
+
+            .toggle-workspace {
+                svg {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    .workspace-main-header {
+        font-size: rem(16px);
+        padding: 4px 0;
+
+        .workspace-dropdown-container {
+            gap: 8px;
+            padding: 6px;
+            border-radius: 0.4em;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($wrkspce-bgc, 8%);
+            }
+        }
+
+        .workspace-indicator-container {
+            position: relative;
+            background-color: rgb(242, 121, 242);
+            color: $clr-white;
+            height: 24px;
+            width: 24px;
+            border-radius: 8px;
+
+            .work-space-icon {
+                position: absolute;
+                right: -8px;
+                bottom: -12px;
+
+                span {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .workspace-title {
+            font-family: roboto-black;
+            letter-spacing: -0.4px;
+            max-width: 135px;
+        }
+
+        .more {
+            height: 26px;
+            width: 26px;
+        }
+    }
+
+    .workspace-sub-header {
+        padding: 6px 0;
+        font-size: rem(14px);
+        height: 44px;
+        justify-content: space-between;
+
+        .search-container {
+            border: 1px solid #d0d4e4;
+            border-radius: 4px;
+            height: 100%;
+            width: 184px;
+            padding-left: 3px;
+
+            &.input-open {
+                outline: 1px solid $primary-blue;
+            }
+            &:hover {
+                outline: 1px solid $primary-brand;
+            }
+
+            input {
+                background-color: transparent;
+                height: 100%;
+                padding: 0 0 0 2px;
+                color: $layout-black;
+            }
+
+            svg {
+                fill: lighten($layout-black, 15%);
+                scale: 0.9;
+            }
+        }
+
+        .add-board-btn {
+            border-radius: 0.4em;
+            width: 32px;
+            height: 32px;
+            background-color: $primary-blue;
+            position: relative;
+            color: white;
+            
+            span {
+                fill: white;
+            }
+
+            .title-modal {
+                width: 190px;
+                height: 35px;
+            }
+
+            &:hover {
+                background-color: (darken($primary-blue, 8%));
+            }
+        }
+    }
+    
+    .boards-titles-container {
+        cursor: pointer;
+        padding-top: 10px;
+        height: 60%;
+        overflow-y: auto;
+        
+        
+        .boards-titles {
+            position: relative;
+            border-radius: 0.2em;
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .remove-board{
+                font-size: rem(10px);
+                position: absolute;
+                right: 6px;
+                padding: 3px;
+                align-self: flex-start;
+                visibility: hidden ;
+            }
+            &:hover {
+                .remove-board{
+                    visibility: visible !important;
+                    &:hover {
+                        border-radius: 2em;
+                        background-color: $wrkspce-bgc;
+                    }
+                    svg {
+                        color: $layout-black;
+                        scale: (1.1);
+                    }
+                }
+                background-color: darken($wrkspce-bgc, 8%);
+            }
+            &.selected-board {
+                background-color: $fltr-bgc;
+            }
+
+            a {
+                display: flex;
+                width: 100%;
+
+                > * {
+                    display: flex;
+                    align-items: center;
+                    padding: 6px;
+                    font-size: rem(14px);
+                }
+
+                .board-title{
+                    position: relative;
+                    top: 1px;
+                }
+
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        display: none;
+    }
+}
+

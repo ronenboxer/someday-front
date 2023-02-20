@@ -1,0 +1,35 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+@import "setup/root-vars";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+
+// Components
+@import "cmps/board-header";
+@import "cmps/task-list";
+@import "cmps/task-preview";
+@import "cmps/task-nav";
+@import "cmps/workspace-sidebar";
+@import "cmps/board-filter";
+@import "cmps/group-list";
+@import "cmps/group-preview";
+@import "cmps/triangle-modal";
+@import "cmps/regular-modal";
+@import "cmps/title-modal";
+@import "cmps/task-summary";
+@import "cmps/kanban-group-preview";
+@import "cmps/dashboard-list";
+
+// Views
+@import "views/board-app";
+@import "views/home-page";
+@import "views/home-login";
+@import "views/task-details";
+@import "views/kanban-group-list";
+@import "views/dashboard-app";

@@ -1,0 +1,119 @@
+/* Breakpoint mixins */
+
+@mixin for-mobile-layout {
+    @media (max-width: calc($mobile-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (max-width: 720px) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: calc($narrow-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: calc($normal-breakpoint + 40px)) {
+        @content;
+    }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(($height / $width) * 100%);
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    >img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin little-box {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin btn {
+    border-radius: 0.2em;
+    height: 34px;
+}
+
+@mixin profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-dark-orange;
+    border-radius: 2em;
+    color: white;
+}
+
+// Mixin for square border cell on hover:
+@mixin cellBorderHover {
+    position: relative;
+
+    &:hover:before {
+        text-align: center;
+        content: "";
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        border: 1px solid;
+        border-color: $brdr-clr;
+        pointer-events: none;
+        z-index: 1;
+        width: calc(100% - 10px);
+    }
+}
+
+@mixin hr() {
+    width: 100%;
+    border-top: 1px solid $brdr-clr;
+    min-height: .5px;
+}
+
+@mixin ellipsis($size: 14px, $width: 80%) {
+    font-size: $size;
+    width: $width;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}

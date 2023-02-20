@@ -1,0 +1,14 @@
+.board-app-container {
+    display: grid;
+    position: relative;
+    grid-template-rows: 186px 1fr;
+
+    &.folded {
+        margin-right: 570px;
+    }
+
+    @include for-mobile-layout {
+        grid-template-rows: 120px 1fr;
+        gap: 18px;
+    }
+}
