@@ -26,4 +26,5 @@ making it easy to add visual details to your tasks.
 
 <img width="100%" alt="walk through" src="https://user-images.githubusercontent.com/114055513/231562612-8dac90db-1344-4748-bee5-1aa3b9c786dc.gif" />
 
-
+## Disclaimer
+Someday is an open source project that was created for educational purposes as part of a coding bootcamp. It is not a real app and is not intended for commercial use. By using Someday, you agree to respect the intellectual property rights of the creators of these assets and designs. Please contact the original creators if you have any questions or concerns.
